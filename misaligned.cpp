@@ -17,7 +17,7 @@ std::string printWithSpacing(std::string colour, int length){
     for(int i = 0; i <= extraSpacesToBeAdded; i++){
         outputString += " ";
     }
-    //std::cout<< "s"<<outputString<<"k";
+
     return outputString;
 }
 
@@ -25,7 +25,6 @@ int printColorMap() {
     const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
     const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
     int maxLengthMajorColor = getMaxLengthOfString(majorColor);
-    int maxLengthMinorColor = getMaxLengthOfString(minorColor);
     int totalColourPair = sizeof(majorColor)/sizeof(majorColor[0]) * sizeof(minorColor)/sizeof(minorColor[0]);
     int maxNumberOfDigits = std::to_string(totalColourPair).size();
     int i = 0, j = 0;
