@@ -14,7 +14,7 @@ std::string printWithSpacing(std::string colour, size_t length){
     std::string outputString = colour;
     size_t colourStringLength = colour.size();
     size_t extraSpacesToBeAdded = length - colourStringLength;
-    for(int i = 0; i <= extraSpacesToBeAdded; i++){
+    for(size_t i = 0; i <= extraSpacesToBeAdded; i++){
         outputString += " ";
     }
     return outputString;
