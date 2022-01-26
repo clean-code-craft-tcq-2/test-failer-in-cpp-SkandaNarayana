@@ -4,7 +4,6 @@
 
 int getMaxLengthOfString(const char* colorList[]){
     int maxLengthColor = 0;
-    size_t totalColours = sizeof(colorList) / sizeof(colorList[0]);
     for(size_t i = 0; i < 5; i++)
         if(maxLengthColor < strlen(colorList[i]))
             maxLengthColor = strlen(colorList[i]);
