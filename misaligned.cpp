@@ -1,6 +1,4 @@
-#include <iostream>
-#include <assert.h>
-#include <string.h>
+#include "misaligned.h"
 
 size_t getMaxLengthOfString(const char* colorList[]){
     size_t maxLengthColor = 0;
@@ -10,7 +8,7 @@ size_t getMaxLengthOfString(const char* colorList[]){
     return maxLengthColor;
 }
 
-std::string printWithSpacing(std::string colour, size_t length){
+std::string addNecessarySpacing(const std::string& colour, const size_t length){
     std::string outputString = colour;
     size_t colourStringLength = colour.size();
     size_t extraSpacesToBeAdded = length - colourStringLength;
@@ -21,33 +19,19 @@ std::string printWithSpacing(std::string colour, size_t length){
     return outputString;
 }
 
-int printColorMap() {
-    const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
-    const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate", "Purple"};
-    size_t maxLengthMajorColor = getMaxLengthOfString(majorColor);
 
-    size_t totalColourPair = sizeof(majorColor)/sizeof(majorColor[0]) * sizeof(minorColor)/sizeof(minorColor[0]);
+void printColorMap() {
+    int majorColorIndex = 0, minorColorIndex = 0;
+    size_t maxLengthMajorColor = getMaxLengthOfString(majorColor);
+    size_t totalColourPair = sizeof(majorColor) / sizeof(majorColor[0]) * sizeof(minorColor) / sizeof(minorColor[0]);
     size_t maxNumberOfDigits = std::to_string(totalColourPair).size();
-    int i = 0, j = 0;
-    for(i = 0; i < 5; i++) {
-        for(j = 0; j < 5; j++) {
-            std::cout << printWithSpacing(std::to_string(i * 5 + j) , maxNumberOfDigits)
-                      << printWithSpacing(majorColor[i] , maxLengthMajorColor)
-                      << minorColor[i] << "\n";
+
+    for(majorColorIndex = 0; majorColorIndex < 5; majorColorIndex++) {
+        for(minorColorIndex = 0; minorColorIndex < 5; minorColorIndex++) {
+            std::cout << addNecessarySpacing(std::to_string(majorColorIndex * 5 + minorColorIndex), maxNumberOfDigits)
+                      << addNecessarySpacing(majorColor[majorColorIndex], maxLengthMajorColor)
+                      << minorColor[majorColorIndex] << "\n";
         }
     }
-    return i * j;
 }
 
-int main() {
-    const char* majorColourTestList[] = {"Magenta", "Cyan", "Grey", "Orange", "Purple"};
-    int result = printColorMap();
-    std::string outputString = printWithSpacing("Red" , 5);
-    size_t lengthOfLongest = getMaxLengthOfString(majorColourTestList);
-    assert(lengthOfLongest == 7);
-    assert(outputString.size() == 8);
-    assert(outputString[-2] = '|');
-    assert(result == 26);
-    std::cout << "All is well (maybe!)\n";
-    return 0;
-}
