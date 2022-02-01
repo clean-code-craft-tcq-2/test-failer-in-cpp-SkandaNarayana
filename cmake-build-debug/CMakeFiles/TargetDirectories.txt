@@ -1,0 +1,3 @@
+/home/nsk8kor/CLionProjects/test-failer-in-cpp-SkandaNarayana/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/nsk8kor/CLionProjects/test-failer-in-cpp-SkandaNarayana/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/nsk8kor/CLionProjects/test-failer-in-cpp-SkandaNarayana/cmake-build-debug/CMakeFiles/test_failer_in_cpp_SkandaNarayana.dir
