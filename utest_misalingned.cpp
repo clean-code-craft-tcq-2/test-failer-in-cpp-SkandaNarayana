@@ -1,4 +1,5 @@
 #include "misaligned.h"
+#include <assert.h>
 
 void test_addNecessarySpacing()
 {

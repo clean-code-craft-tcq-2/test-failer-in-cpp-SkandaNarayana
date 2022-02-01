@@ -2,7 +2,6 @@
 #define TEST_FAILER_IN_CPP_SKANDANARAYANA_MISALIGNED_H
 
 #include <iostream>
-#include <cassert>
 #include <cstring>
 
 static const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};

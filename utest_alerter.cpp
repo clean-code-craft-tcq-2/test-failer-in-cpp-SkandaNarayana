@@ -1,5 +1,5 @@
 #include "alerter.h"
-#include <cassert>
+#include <assert.h>
 
 
 int main() {

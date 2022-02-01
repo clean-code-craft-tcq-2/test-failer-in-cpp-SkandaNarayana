@@ -1,7 +1,8 @@
 #include "tshirts.h"
-#include <cassert>
+#include <assert.h>
 
-int main() {
+int main()
+{
     assert(size(37) == small);
     assert(size(40) == medium);
     assert(size(43) == large);
