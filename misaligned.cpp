@@ -1,5 +1,8 @@
 #include "misaligned.h"
 
+const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
+const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate", "Purple"};
+
 size_t getMaxLengthOfString(const char* colorList[]){
     size_t maxLengthColor = 0;
     for(size_t i = 0; i < 5; i++)
