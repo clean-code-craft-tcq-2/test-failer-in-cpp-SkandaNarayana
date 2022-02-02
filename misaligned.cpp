@@ -32,8 +32,8 @@ void printColorMap() {
     size_t maxLengthMajorColor = getMaxLengthOfString(majorColor);
     size_t maxNumberOfDigits = std::to_string(numberOfTotalColorPair).size();
 
-    for(int majorColorIndex = 0; majorColorIndex < numberOfMajorColor; majorColorIndex++) {
-        for(int minorColorIndex = 0; minorColorIndex < numberOfMinorColor; minorColorIndex++) {
+    for(size_t majorColorIndex = 0; majorColorIndex < numberOfMajorColor; majorColorIndex++) {
+        for(size_t minorColorIndex = 0; minorColorIndex < numberOfMinorColor; minorColorIndex++) {
             std::cout << addNecessarySpacing(std::to_string((majorColorIndex * 5 + minorColorIndex) + 1), maxNumberOfDigits)
                       << addNecessarySpacing(majorColor[majorColorIndex], maxLengthMajorColor)
                       << minorColor[minorColorIndex] << "\n";
