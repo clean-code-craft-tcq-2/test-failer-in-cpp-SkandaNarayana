@@ -1,5 +1,5 @@
 #include "misaligned.h"
-#include <assert.h>
+#include <cassert>
 
 void test_addNecessarySpacing()
 {
@@ -9,7 +9,7 @@ void test_addNecessarySpacing()
 }
 
 void test_getMaxLengthOfString(){
-    const char* majorColourTestList[] = {"Magenta", "Cyan", "Grey", "Orange", "Purple"};
+    std::string majorColourTestList[] = {"Magenta", "Cyan", "Grey", "Orange", "Purple"};
     size_t lengthOfLongest = getMaxLengthOfString(majorColourTestList);
     assert(lengthOfLongest == 7);
 }
