@@ -1,5 +1,5 @@
 #include "alerter.h"
-#include <assert.h>
+#include <cassert>
 
 
 int main() {
@@ -12,10 +12,13 @@ int main() {
     std::cout << alertFailureCount << " alerts failed.\n";
 
     int networkAlertOutput = alert->networkAlert(NORMAL_BODY_TEMP);
-    assert(networkAlertOutput == 200);
+    assert(networkAlertOutput == NORMAL_THRESHOLD_RETVAL);
 
     networkAlertOutput = alert->networkAlert(100);
-    assert(networkAlertOutput == 500);
+    assert(networkAlertOutput == THRESHOLD_CROSSED_RETVAL);
+
+    float testCelcius = convertToCelcius(104);
+    assert(testCelcius == 40);
 
     std::cout << "All is well (maybe!)\n";
     return 0;

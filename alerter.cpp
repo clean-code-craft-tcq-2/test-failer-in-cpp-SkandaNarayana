@@ -2,19 +2,23 @@
 
 int alertFailureCount = 0;
 
-int NetworkAlerterStub::networkAlert(const float celcius){
+int NetworkAlerterStub::networkAlert(const float celcius)const {
     if (celcius > NORMAL_BODY_TEMP){
         std::cout << "ALERT: Temperature is " << celcius << " celcius.\n";
-        return 500;
+        return THRESHOLD_CROSSED_RETVAL;
     }
-    return 200;
+    return NORMAL_THRESHOLD_RETVAL;
 }
 
 
+float convertToCelcius(const float farenheit){
+    return (farenheit - 32) * 5 / 9;
+}
+
 void alertInCelcius(const float farenheit, IAlerter* AlertOverNetwork) {
-    float celcius = (farenheit - 32) * 5 / 9;
+    float celcius = convertToCelcius(farenheit);
     int returnCode = AlertOverNetwork->networkAlert(celcius);
-    if (returnCode != 200) {
+    if (returnCode != NORMAL_THRESHOLD_RETVAL) {
         alertFailureCount++;
     }
 }
