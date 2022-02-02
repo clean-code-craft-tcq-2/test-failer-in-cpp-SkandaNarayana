@@ -4,9 +4,10 @@
 #include <iostream>
 
 enum TShirtSize{
-    small = 'S',
-    medium = 'M',
-    large = 'L'
+    Undefined = 'U',
+    Small = 'S',
+    Medium = 'M',
+    Large = 'L'
 };
 
 TShirtSize size(int cms);

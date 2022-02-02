@@ -1,14 +1,13 @@
 #include "tshirts.h"
-#include <assert.h>
+#include <cassert>
 
 int main()
 {
-    assert(size(37) == small);
-    assert(size(40) == medium);
-    assert(size(43) == large);
-    assert(size(38) == small);
-    assert(size(42) == large);
-    assert(size(42) == large);
+    assert(size(37) == Small);
+    assert(size(38) == Small);
+    assert(size(40) == Medium);
+    assert(size(43) == Large);
+    assert(size(42) == Large);
     std::cout << "All is well (maybe!)\n";
     return 0;
 }

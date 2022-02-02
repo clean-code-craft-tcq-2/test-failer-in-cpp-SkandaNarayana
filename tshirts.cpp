@@ -1,13 +1,13 @@
 #include "tshirts.h"
 
 TShirtSize size(const int cms) {
-    TShirtSize sizeName;
+    TShirtSize sizeName = TShirtSize::Undefined;
     if(cms <= 38) {
-        sizeName = small;
+        sizeName = Small;
     } else if(cms > 38 && cms < 42) {
-        sizeName = medium;
+        sizeName = Medium;
     } else if(cms >= 42) {
-        sizeName = large;
+        sizeName = Large;
     }
     return sizeName;
 }
